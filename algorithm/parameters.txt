@@ -1,0 +1,26 @@
+PARAMETER VALUES
+
+1. ENRON EMAIL DATASET
+
+Seed Budget (K): 10/15
+Final MC Simulations: 2,500
+Training MC: 1,800
+Greedy MC Simulations: 500
+Epsilon (Exploration Rate): 0.15
+R (eDGPA Resolution): 20
+Warm-start Bias: 0.12
+Pool Size: 158
+Reward Scale: x3.5
+
+
+2. MATHOVERFLOW DATASET
+
+Seed Budget (K): 10/15
+Final MC Simulations: 400
+Training MC: 600
+Greedy MC Simulations: 180
+Epsilon (Exploration Rate): 0.18
+R (eDGPA Resolution): 20
+Warm-start Bias: 0.12
+Pool Size: 250
+Reward Scale: x4.0

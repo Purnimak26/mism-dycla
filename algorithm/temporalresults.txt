@@ -1,0 +1,19 @@
+ENRON EMAIL DATASET
+
+Layer (Department)    Node Count    Edge Count
+
+Dept1                 309           3031
+Dept2                 162           1772
+Dept3                 89            1506
+Dept4                 142           1375
+Inter-Layer           27            33
+
+
+MATHSOVERFLOW DATASET
+
+Layer    Node Count    Edge Count
+
+A2Q      21,688        107,581
+C2Q      16,836        203,639
+C2A      13,840        195,330
+
