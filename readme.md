@@ -101,7 +101,7 @@ Results Summary
 | MathsOverflow | 10 | 24.5 (±6.7)  |       23.3|       10.0 |   13.0 |
 | MathsOverflow | 15 | 33.4 (±7.7)  |       32.0|       15.1 |   19.8 |
 
-##Key Findings
+## Key Findings
 **MISM-DyCLA consistently performs better than other baselines.**
 **MIS candidate pooling helps in significant action space reduction.**
 **Adaptive learning depends on diffusion model**
@@ -114,7 +114,7 @@ greedy refinement and experimental validation on real-world datasets. The path f
 focusing on richer diffusion models, efficient deep leaning mechanisms, real-time adaptation and
 fairness-aware objectives.
 
-##Future Directions
+## Future Directions
 **GNN + Deep RL integration**
 **Behaviour-aware diffusion models**
 **Broader benchmarking**
