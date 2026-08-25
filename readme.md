@@ -106,7 +106,7 @@ Results Summary
 **MIS candidate pooling helps in significant action space reduction.**
 **Adaptive learning depends on diffusion model**
 **Advantage grows with seed budget.**
-
+##
 Conclusion
 In summary, MISM-DyCLA is a novel algorithm that unifies three components: - structural
 diversity through MIS, adaptive learning through DyCLA, approximation guarantees through
@@ -119,4 +119,4 @@ fairness-aware objectives.
 **Behaviour-aware diffusion models**
 **Broader benchmarking**
 **Fairness-constrained IM**
-
+##
