@@ -7,22 +7,39 @@ Overview
 Influence Maximization is defined as the computational problem of selecting a small, optimal set
 of initial nodes, known as seeds from a social network such that, when they adopt a product, idea or behaviour, the anticipated count of influenced(activated) nodes across the network is most optimal. Given a social network G (directed or undirected) and a positive integer k (k ≤ N), nodes in the network are added to the seed set with respect to the specified diffusion model with the aim of optimizing the influence spread. Most classical algorithms assume network to be static or single-layered but networks are multiplex (having multiple layers of interactions) and temporal (keep on changing with time).
 
-MISM-DyCLA addresses these gaps with six-stage pipeline applied to temporal snapshot of the network:
-1.Temporal snapshot construction:bin stamped edges into monthly/weekly snapshots
-2.Layer-wise MIS Extraction: compute Maximum Independent Set per interaction layer to identify structurally non-redundant candidates.
-3.Candidate Pool Construction: merge and rank per layer MIS nodes by centrality to reduce action space
-4.DyCLA Adaptive Learning: K conjugate learning automata(eDGPA) jointly learn which candidate combinations maximize influence spread. Sharing team reward signal and adapting across snapshots
-5.Greedy seed refinement: Apply greedy marginal gain refinement on the top of learned distributions to obtain quality seed set
-6.Influence Spread evaluation: evaluate the final seed set via Monte Carlo simulation under the Independent Cascade model.
+## MISM-DyCLA Pipeline
 
-Repository Structure
+MISM-DyCLA addresses these gaps with a six-stage pipeline applied to temporal snapshots of the network:
+
+1. **Temporal Snapshot Construction**  
+   Bin timestamped edges into monthly or weekly snapshots.
+
+2. **Layer-wise MIS Extraction**  
+   Compute the Maximum Independent Set for each interaction layer to identify structurally non-redundant candidates.
+
+3. **Candidate Pool Construction**  
+   Merge and rank per-layer MIS nodes by centrality to reduce the action space.
+
+4. **DyCLA Adaptive Learning**  
+   K conjugate learning automata (eDGPA) jointly learn which candidate combinations maximize influence spread. A shared team reward signal is used across snapshots.
+
+5. **Greedy Seed Refinement**  
+   Apply greedy marginal-gain refinement to the learned distributions to obtain a high-quality seed set.
+
+6. **Influence Spread Evaluation**  
+   Evaluate the final seed set using Monte Carlo simulations under the Independent Cascade model.
+
+## Repository Structure
+
+```text
 mism-algorithm/
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
+├── parameters.txt
+├── temporalresults.txt
+│
 ├── algorithm/
-│   ├── parameters.txt
-│   ├── temporalresults.txt
 │   ├── EnronAlgo/
 │   │   ├── dataset_load.py
 │   │   ├── department_mapping.py
@@ -31,6 +48,7 @@ mism-algorithm/
 │   │   ├── layer_wise_mis.py
 │   │   ├── main_experiment.py
 │   │   └── weightedcascade.py
+│   │
 │   └── MathsAlgo/
 │       ├── dataset_load_maths.py
 │       ├── influencespread.py
@@ -39,40 +57,16 @@ mism-algorithm/
 │       ├── maths.py
 │       ├── monthlysnapshots.py
 │       └── timebinning.py
+│
 ├── data/
 │   ├── datasetlinks.py
 │   ├── EnronEmail/
-│   │   ├── ENRON(DEPT1).xlsx
-│   │   ├── ENRON(DEPT2).xlsx
-│   │   ├── ENRON(DEPT3).xlsx
-│   │   ├── ENRON(DEPT4).xlsx
-│   │   └── ENRONTEMPORAL(MAIN).xlsx
 │   └── MathsOverFlow/
-│       ├── MATHSOVERFLOW(A2Q).xlsx
-│       ├── MATHSOVERFLOW(C2A).xlsx
-│       ├── MATHSOVERFLOW(C2Q).xlsx
-│       └── mathsoverflow(main).xlsx
+│
 └── results/
     ├── enronresults/
-    │   ├── EnronCsv/
-    │   │   ├── Enron_K10_results.csv
-    │   │   └── Enron_K15_results.csv
-    │   ├── InfluenceSpreadEnron/
-    │   │   ├── email10.png
-    │   │   └── email15.png
-    │   └── snapshotanalysisEnron/
-    │       ├── Enron_K10_InfluenceSpread.png
-    │       └── Enron_K15_InfluenceSpread.png
     └── mathsoverflowresults/
-        ├── InfluenceSpreadMaths/
-        │   ├── maths10.png
-        │   └── maths15.png
-        ├── MathsOverFlowCsv/
-        │   ├── MathOverflow_K10_results.csv
-        │   └── MathOverflow_K15_results.csv
-        └── snapshotanalysisMaths/
-            ├── MathOverFlow_K10_InfluenceSpread.png
-            └── MathOverFlow_K15_InfluenceSpread.png
+```
 
 Datasets
 | Dataset       | Nodes | Temporal Edges | Layers                    | Snapshotting                 | Diffusion Model                          |
