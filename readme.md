@@ -16,75 +16,63 @@ MISM-DyCLA addresses these gaps with six-stage pipeline applied to temporal snap
 6.Influence Spread evaluation: evaluate the final seed set via Monte Carlo simulation under the Independent Cascade model.
 
 Repository Structure
-C:.
-│   .gitignore
-│   readme.md
-│   requirements.txt
-│
-├───algorithm
-│   │   parameters.txt
-│   │   temporalresults.txt
-│   │
-│   ├───EnronAlgo
-│   │       dataset_load.py
-│   │       department_mapping.py
-│   │       enronemail.py
-│   │       enronsnapshots.py
-│   │       layer_wise_mis.py
-│   │       main_experiment.py
-│   │       weightedcascade.py
-│   │
-│   └───MathsAlgo
-│           dataset_load_maths.py
-│           influencespread.py
-│           layerwisemis.py
-│           mainexp.py
-│           maths.py
-│           monthlysnapshots.py
-│           timebinning.py
-│
-├───data
-│   │   datasetlinks.py
-│   │
-│   ├───EnronEmail
-│   │       ENRON(DEPT1).xlsx
-│   │       ENRON(DEPT2).xlsx
-│   │       ENRON(DEPT3).xlsx
-│   │       ENRON(DEPT4).xlsx
-│   │       ENRONTEMPRAL(MAIN).xlsx
-│   │
-│   └───MathsOverFlow
-│           MATHSOVERFLOW(A2Q).xlsx
-│           MATHSOVERFLOW(C2A).xlsx
-│           MATHSOVERFLOW(C2Q).xlsx
-│           mathsoverflow(main).xlsx
-│
-└───results
-    ├───enronresults
-    │   ├───EnronCsv
-    │   │       Enron_K10_results.csv
-    │   │       Enron_K15_results.csv
-    │   │
-    │   ├───InfluenceSpreadEnron
-    │   │       eemail10.png
-    │   │       eemail15.png
-    │   │
-    │   └───snapshotanalysisEnron
-    │           Enron_K10_InfluenceSpread (1).png
-    │           Enron_K15_InfluenceSpread (1).png
-    │
-    └───mathsoverflowresults
-        ├───InfluenceSpreadMaths
-        │       maths10.png
-        │       maths15 (2).png
-        │
-        ├───MathsOverflowCsv
-        │       MathOverflow_K10_results.csv
-        │       MathOverflow_K15_results.csv
-        │
-        └───snapshotanlaysisMaths
-                MathOverflow_K10_InfluenceSpread.png
-                MathOverflow_K15_InfluenceSpread.png
+mism-algorithm/
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── algorithm/
+│   ├── parameters.txt
+│   ├── temporalresults.txt
+│   ├── EnronAlgo/
+│   │   ├── dataset_load.py
+│   │   ├── department_mapping.py
+│   │   ├── enronemail.py
+│   │   ├── enronsnapshots.py
+│   │   ├── layer_wise_mis.py
+│   │   ├── main_experiment.py
+│   │   └── weightedcascade.py
+│   └── MathsAlgo/
+│       ├── dataset_load_maths.py
+│       ├── influencespread.py
+│       ├── layerwisemis.py
+│       ├── mainexp.py
+│       ├── maths.py
+│       ├── monthlysnapshots.py
+│       └── timebinning.py
+├── data/
+│   ├── datasetlinks.py
+│   ├── EnronEmail/
+│   │   ├── ENRON(DEPT1).xlsx
+│   │   ├── ENRON(DEPT2).xlsx
+│   │   ├── ENRON(DEPT3).xlsx
+│   │   ├── ENRON(DEPT4).xlsx
+│   │   └── ENRONTEMPORAL(MAIN).xlsx
+│   └── MathsOverFlow/
+│       ├── MATHSOVERFLOW(A2Q).xlsx
+│       ├── MATHSOVERFLOW(C2A).xlsx
+│       ├── MATHSOVERFLOW(C2Q).xlsx
+│       └── mathsoverflow(main).xlsx
+└── results/
+    ├── enronresults/
+    │   ├── EnronCsv/
+    │   │   ├── Enron_K10_results.csv
+    │   │   └── Enron_K15_results.csv
+    │   ├── InfluenceSpreadEnron/
+    │   │   ├── email10.png
+    │   │   └── email15.png
+    │   └── snapshotanalysisEnron/
+    │       ├── Enron_K10_InfluenceSpread.png
+    │       └── Enron_K15_InfluenceSpread.png
+    └── mathsoverflowresults/
+        ├── InfluenceSpreadMaths/
+        │   ├── maths10.png
+        │   └── maths15.png
+        ├── MathsOverFlowCsv/
+        │   ├── MathOverflow_K10_results.csv
+        │   └── MathOverflow_K15_results.csv
+        └── snapshotanalysisMaths/
+            ├── MathOverFlow_K10_InfluenceSpread.png
+            └── MathOverFlow_K15_InfluenceSpread.png
 
 Datasets
 | Dataset       | Nodes | Temporal Edges | Layers                    | Snapshotting                 | Diffusion Model                          |
