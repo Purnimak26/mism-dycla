@@ -102,21 +102,21 @@ Results Summary
 | MathsOverflow | 15 | 33.4 (±7.7)  |       32.0|       15.1 |   19.8 |
 
 ## Key Findings
-**MISM-DyCLA consistently performs better than other baselines.**
-**MIS candidate pooling helps in significant action space reduction.**
-**Adaptive learning depends on diffusion model**
-**Advantage grows with seed budget.**
-##
-Conclusion
-In summary, MISM-DyCLA is a novel algorithm that unifies three components: - structural
-diversity through MIS, adaptive learning through DyCLA, approximation guarantees through
-greedy refinement and experimental validation on real-world datasets. The path forward is clear
-focusing on richer diffusion models, efficient deep leaning mechanisms, real-time adaptation and
-fairness-aware objectives.
+
+- **MISM-DyCLA consistently outperforms competing baseline methods.**
+- **MIS-based candidate pooling significantly reduces the action space.**
+- **Adaptive learning performance depends on the underlying diffusion model.**
+- **The performance advantage increases with the seed budget.**
+
+## Conclusion
+
+In summary, **MISM-DyCLA** is a novel influence maximization framework that integrates structural diversity through MIS, adaptive learning through DyCLA, and greedy refinement for improved seed selection. The framework is experimentally validated on real-world temporal networks.
+
+Future improvements can focus on richer diffusion models, efficient deep-learning mechanisms, real-time adaptation, and fairness-aware objectives.
 
 ## Future Directions
-**GNN + Deep RL integration**
-**Behaviour-aware diffusion models**
-**Broader benchmarking**
-**Fairness-constrained IM**
-##
+
+- **GNN + Deep Reinforcement Learning Integration**
+- **Behaviour-Aware Diffusion Models**
+- **Broader Benchmarking**
+- **Fairness-Constrained Influence Maximization**
